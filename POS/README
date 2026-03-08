@@ -7,7 +7,10 @@ WEEK 3
    - DB_PASSWORD=
 3. APP_KEY sudah digenerate dengan: php artisan key:generate
 
-#PRAKTIKUM 2
+#PRAKTIKUM 2.1
 ![alt text](image-1.png)
 pada praktikum 2 ini membuat create m_level, m_kategori, dan m_supplier
+#PRAKTIKUM 2.2
+![alt text](image.png)
+
 
