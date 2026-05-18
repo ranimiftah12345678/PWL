@@ -177,3 +177,128 @@ Jika category dihapus sementara masih terdapat post yang merujuk pada category t
 
 <br>
 
+--- 
+
+## JOBSHEET WEEK 06 
+### JOBSHEET 1 – Implementasi Form Elements & Resource Post di Filament
+
+#### Dokumentasi Praktikum
+<br>
+
+<details>
+<summary><b>1. Membuat Resource Post</b></summary>
+<br>
+<blockquote>
+
+![Hasil Praktikum](img/6.1.1.png)
+![Hasil Praktikum](img/6.1.2.png)
+
+</blockquote>
+</details>
+
+<br>
+
+<details>
+<summary><b>2. Implementasi Form Elements</b></summary>
+<br>
+<blockquote>
+
+**a. Text Input (Title&Slug)**
+![Hasil Praktikum](img/6.1.3.png)
+
+**b. Select (Relasi Category)**
+![Hasil Praktikum](img/6.1.4.png)
+
+**c. Color Picker**
+![Hasil Praktikum](img/6.1.5.png)
+
+**d. Markdown**
+![Hasil Praktikum](img/6.1.6.png)
+
+**e. RichEditor**
+![Hasil Praktikum](img/6.1.7.png)
+
+**f. File Upload (Image)**
+![Hasil Praktikum](img/6.1.8.png)
+![Hasil Praktikum](img/6.1.9.png)
+
+**g. Tags Input**
+![Hasil Praktikum](img/6.1.10.png)
+
+**h. Checkbpx (Published)**
+![Hasil Praktikum](img/6.1.11.png)
+
+**i. Date Picker (Published At)**
+![Hasil Praktikum](img/6.1.12.png)
+
+</blockquote>
+</details>
+
+<br>
+
+<details>
+<summary><b>3. Menampilkan Data di Tabel</b></summary>
+<br>
+<blockquote>
+
+![Hasil Praktikum](img/6.1.13.png)
+![Hasil Praktikum](img/6.1.14.png)
+![Hasil Praktikum](img/6.1.15.png)
+
+</blockquote>
+</details>
+
+<br>
+<br>
+<details>
+<summary><b>Analisis & Diskusi</b></summary>
+<br>
+<blockquote>
+
+**1. Mengapa kita perlu storage:link?**
+<br>
+Jawab : 
+Secara default, Laravel menyimpan file yang diunggah (seperti gambar post) di dalam folder storage/app/public, yang mana folder ini tidak dapat diakses secara langsung melalui browser demi keamanan. Perintah php artisan storage:link berfungsi untuk membuat symbolic link (pintasan) dari folder public/storage ke storage/app/public. Dengan adanya link ini, file yang tersimpan di direktori internal storage dapat diakses dan ditampilkan oleh aplikasi web melalui URL publik.
+
+**2. Apa fungsi $casts untuk field JSON?**
+<br>
+Jawab : 
+Properti $casts pada model Laravel digunakan untuk mengubah tipe data field saat data disimpan atau diambil dari database secara otomatis. Untuk field bertipe JSON (seperti field tags), kita perlu melakukan cast ke tipe array. Hal ini dilakukan agar data JSON yang tersimpan sebagai string di database dapat langsung diolah sebagai struktur data array di dalam kode PHP (Filament), sehingga komponen seperti TagsInput dapat berfungsi dengan benar.
+
+**3. Mengapa kita menggunakan category.name bukan category_id?**
+<br>
+Jawab : 
+Penggunaan category.name pada tabel bertujuan agar data yang ditampilkan lebih komunikatif bagi pengguna (user-friendly). Jika kita menggunakan category_id, tabel hanya akan menampilkan angka ID yang sulit dipahami. Dengan memanggil relasi category.name, Filament akan mengambil nama kategori dari tabel terkait (relasi belongsTo) sehingga informasi yang muncul adalah nama kategori yang sebenarnya (misal: "Laravel" atau "PHP").
+
+**4. Apa perbedaan RichEditor dan MarkdownEditor?**
+<br>
+Jawab : 
+Meskipun keduanya digunakan untuk mengolah konten teks panjang, perbedaannya terletak pada format penyimpanan dan antarmukanya:
+- MarkdownEditor: Digunakan untuk menulis teks dengan sintaks Markdown (seperti # untuk judul, ** untuk tebal). Data yang disimpan di database adalah teks mentah beserta kode Markdown tersebut.
+
+- RichEditor: Merupakan editor WYSIWYG (What You See Is What You Get) yang memungkinkan pengguna memformat teks secara langsung melalui tombol-tombol (seperti MS Word). Data yang disimpan biasanya berupa tag HTML (seperti ,< b > atau < h1 >)
+
+</blockquote>
+</details>
+
+<br>
+
+---
+
+### JOBSHEET 2 Custom Layout Form dengan Section & Group di Filament
+
+#### Dokumentasi Praktikum
+<br>
+
+<details>
+<summary><b>1. Mengatur Layout Dasar dengan Column</b></summary>
+<br>
+<blockquote>
+
+**a. Membuat 3 field dalam satu baris**
+![Hasil Praktikum](img/6.2.1.png)
+**b. Membuat layout yang berbeda**
+![Hasil Praktikum](img/6.2.2.png)
+
+</blockquote>
+</details>
