@@ -2,17 +2,21 @@
 
 namespace App\Filament\Resources\Posts\Tables;
 
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Tables\Table;
-use Filament\Tables\Columns\TextColumn;
+use Filament\Actions\ReplicateAction;
+use Filament\Forms\Components\Checkbox;
+use Filament\Forms\Components\DatePicker;
 use Filament\Tables\Columns\ColorColumn;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
-use Filament\Forms\Components\DatePicker;
+use Filament\Tables\Table;
 
 class PostsTable
 {
@@ -21,7 +25,6 @@ class PostsTable
         return $table
             ->columns([
                 //
-                // B.1 - Kolom ID (toggleable, hidden by default)
                 TextColumn::make('id')
                     ->label('ID')
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -44,12 +47,10 @@ class PostsTable
                     ->disk('public')
                     ->toggleable(),
 
-                // B.2 - Kolom Tags (toggleable, hidden by default)
                 TextColumn::make('tags')
                     ->label('Tags')
                     ->toggleable(isToggledHiddenByDefault: true),
 
-                // B.3 - Kolom Published (IconColumn boolean)
                 IconColumn::make('published')
                     ->boolean()
                     ->label('Published')
@@ -63,7 +64,6 @@ class PostsTable
             ])
             ->defaultSort('title', 'asc')
             ->filters([
-                // C. Filter Berdasarkan Tanggal
                 Filter::make('created_at')
                     ->label('Creation Date')
                     ->schema([
@@ -77,19 +77,27 @@ class PostsTable
                         );
                     }),
 
-                // D. Filter Berdasarkan Relasi (Kategori)
                 SelectFilter::make('category_id')
                     ->label('Select Category')
                     ->relationship('category', 'name')
                     ->preload(),
             ])
             ->recordActions([
-                EditAction::make(),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
-            ]);
+            ReplicateAction::make(),
+            EditAction::make(),
+            DeleteAction::make(),
+
+            // Custom Action - Ubah Status Publish
+            Action::make('status')
+                ->label('Status Change')
+                ->icon('heroicon-o-check-circle')
+                ->schema([
+                    Checkbox::make('published')
+                        ->default(fn ($record): bool => $record->published),
+                ])
+                ->action(function ($record, array $data) {
+                    $record->update(['published' => $data['published']]);
+                }),
+        ]);
     }
 }
