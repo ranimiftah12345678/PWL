@@ -579,3 +579,268 @@ Jawab :
 <br>
 
 ---
+
+## JOBSHEET WEEK 07
+### JOBSHEET 1 Implementasi Wizard Form (Multi Step Form) di Filament
+
+#### Dokumentasi Praktikum
+<br>
+
+<details>
+<summary><b>Hasil Praktikum</b></summary>
+<br>
+<blockquote>
+
+![Hasil Praktikum](img/7.1.1.png)
+![Hasil Praktikum](img/7.1.2.png)
+![Hasil Praktikum](img/7.1.3.png)
+![Hasil Praktikum](img/7.1.4.png)
+![Hasil Praktikum](img/7.1.5.png)
+\![Hasil Praktikum](img/7.1.6.png)
+![Hasil Praktikum](img/7.1.7.png)
+![Hasil Praktikum](img/7.1.8.png)
+![Hasil Praktikum](img/7.1.9.png)
+
+</blockquote>
+</details>
+
+<br>
+
+<details>
+<summary><b>Analisis & Diskusi</b></summary>
+<br>
+<blockquote>
+
+**1. Mengapa Wizard Form lebih baik untuk form panjang?**
+<br>
+Jawab : 
+Wizard Form dianggap lebih baik untuk formulir panjang karenaa menerapkan prinsip chunking, yaitu membagi informasi kompleks menjadi potongan-potongan kecil yang lebih mudah dikelola. Hal ini mengurangi beban kognitif pengguna dan mencegah rasa kewalahan (form fatigue) yang sering muncul saat melihat formulir tunggal dengan terlalu banyak kolom input sekaligus.
+
+**2. Kapan kita menggunakan skippable()?**
+<br>
+Jawab : 
+Fungsi skippable() digunakan pada langkah-langkah yang bersifat opsional atau tidak wajib diisi oleh semua pengguna. Fitur ini memberikan fleksibilitas agar pengguna dapat melewati bagian yang tidak relevan dengan kondisi mereka, sehingga alur pengisian tetap lancar dan tidak terhenti oleh validasi pada data yang sebenarnya tidak mutlak diperlukan.
+
+**3. Apa kelebihan multi-step dibanding single form panjang?**
+<br>
+Jawab : 
+Kelebihan utama multi-step form adalah peningkatan fokus pengguna dan tampilan antarmuka yang lebih bersih. Selain itu, multi-step memungkinkan adanya indikator progres yang memberikan kepastian psikologis mengenai sisa waktu pengisian, serta memudahkan proses validasi data per bagian agar kesalahan dapat langsung diperbaiki tanpa harus menunggu hingga akhir formulir.
+
+**4. Apakah wizard cocok untuk semua jenis form?**
+<br>
+Jawab : 
+Tidak, wizard tidak cocok untuk semua jenis formulir. Untuk formulir yang sangat pendek (hanya terdiri dari sedikit kolom) atau formulir yang memerlukan perbandingan data antar bagian secara cepat, penggunaan wizard justru akan menambah hambatan (friction) dan memperlambat pengguna karena harus berpindah-pindah halaman secara tidak efisien.
+
+</blockquote>
+</details>
+
+<br>
+
+---
+
+### JOBSHEET 2 – Implementasi Info List (View Page) di Filament
+
+#### Dokumentasi Praktikum
+<br>
+
+<details>
+<summary><b>Hasil Praktikum</b></summary>
+<br>
+<blockquote>
+
+![Hasil Praktikum](img/8.1.1.png)
+![Hasil Praktikum](img/8.1.2.png)
+![Hasil Praktikum](img/8.1.3.png)
+
+</blockquote>
+</details>
+
+<br>
+
+<details>
+<summary><b>Analisis & Diskusi</b></summary>
+<br>
+<blockquote>
+
+**1. Mengapa View Page tidak cocok menggunakan form input?**
+<br>
+Jawab : 
+View Page dirancang khusus untuk menampilkan data secara statis (read-only) dengan tujuan memberikan keterbacaan yang optimal bagi pengguna. Menggunakan form input di halaman ini tidak disarankan karena akan merusak hierarki visual dan fungsi utama halaman tersebut sebagai media peninjauan data; jika pengguna ingin melakukan perubahan, secara standar UX mereka harus diarahkan ke Edit Page agar proses validasi dan penyimpanan data tetap terisolasi dan aman.
+
+**2. Apa perbedaan TextColumn dan TextEntry?**
+<br>
+Jawab : 
+Perbedaan mendasar keduanya terletak pada konteks penggunaannya dalam komponen UI. 
+
+- TextColumn digunakan di dalam tabel (List Page) untuk menyusun data dalam bentuk kolom-kolom vertikal yang seragam
+- Sedangkan TextEntry digunakan di dalam Infolist atau View Page untuk menampilkan nilai data individual beserta labelnya dalam tata letak yang lebih fleksibel dan informatif.
+
+**3. Kapan kita menggunakan badge?**
+<br>
+Jawab : 
+Badge sebaiknya digunakan ketika kita ingin menonjolkan status atau kategori singkat dari sebuah data agar mudah dipindai (scannable) oleh mata pengguna. Komponen ini sangat efektif untuk membedakan kondisi tertentu secara visual melalui warna, seperti membedakan status transaksi "Sukses", "Pending", atau "Gagal" pada baris tabel atau detail informasi.
+
+**4.Apa keuntungan menggunakan IconEntry untuk boolean?**
+<br>
+Jawab : 
+Menggunakan IconEntry untuk data boolean (benar/salah) memberikan keuntungan berupa pemahaman instan melalui representasi visual daripada sekadar teks "Ya" atau "Tidak". Ikon seperti centang hijau atau silang merah jauh lebih cepat diproses oleh otak manusia, menghemat ruang pada antarmuka, dan memberikan kesan desain yang lebih modern serta intuitif bagi pengguna.
+
+</blockquote>
+</details>
+
+<br>
+
+---
+
+### JOBSHEET 3 Implementasi Tabs pada Info List di Filament
+
+#### Dokumentasi Praktikum
+<br>
+
+<details>
+<summary><b>Hasil Praktikum</b></summary>
+<br>
+<blockquote>
+
+![Hasil Praktikum](img/9.1.1.png)
+![Hasil Praktikum](img/9.1.2.png)
+![Hasil Praktikum](img/9.1.3.png)
+![Hasil Praktikum](img/9.1.4.png)
+
+</blockquote>
+</details>
+
+<br>
+
+<details>
+<summary><b>Analisis & Diskusi</b></summary>
+<br>
+<blockquote>
+
+**1. Kapan kita menggunakan Tabs dibanding Section?**
+<br>
+Jawab : 
+Penggunaan Tabs lebih tepat dipilih ketika kita memiliki beberapa kelompok data yang setara secara hierarki namun tidak perlu dilihat secara bersamaan, sehingga ruang layar dapat dihemat. Sebaliknya, Section digunakan jika informasi tersebut harus dibaca secara berurutan atau pengguna perlu melihat keterkaitan antar kelompok data dalam satu tampilan gulir (scrolling) yang berkesinambungan.
+
+**2. Apa kelebihan Tabs untuk data panjang?**
+<br>
+Jawab : 
+Kelebihan utama Tabs untuk data yang sangat panjang adalah kemampuannya dalam mengorganisir informasi tanpa memperpanjang halaman secara vertikal. Dengan membagi data ke dalam tab-tab terpisah, antarmuka tetap terlihat rapi dan tidak mengintimidasi pengguna, serta memungkinkan akses langsung ke kategori informasi spesifik tanpa harus melakukan pencarian manual melalui guliran halaman yang panjang.
+
+**3. Apakah Tabs bisa digunakan pada Form juga?**
+<br>
+Jawab : 
+Ya, Tabs sangat efektif digunakan pada formulir untuk mengelompokkan input berdasarkan kategori tertentu, seperti "Informasi Dasar", "Alamat", dan "Pengaturan Akun". Penggunaan tab pada formulir membantu menjaga fokus pengguna pada satu topik pengisian dalam satu waktu, mirip dengan prinsip multi-step form, namun dengan fleksibilitas navigasi yang lebih bebas antar bagian.
+
+**4. Bagaimana jika tab terlalu banyak?**
+Jika jumlah tab terlalu banyak hingga melampaui lebar layar, hal ini akan menurunkan pengalaman pengguna karena navigasi menjadi sulit dan beberapa label mungkin tersembunyi. Solusi terbaik adalah meninjau kembali pengelompokan data, menggunakan menu dropdown untuk tab tambahan, atau beralih menggunakan komponen navigasi vertikal (Sidebar) yang lebih mampu menampung banyak kategori tanpa mengorbankan keterbacaan.
+
+</blockquote>
+</details>
+
+<br>
+
+---
+
+## JOBSHEET WEEK 10 
+
+### Implementasi Sorting (Ascending & Descending) pada Table Filament
+<br>
+
+<details>
+<summary><b>Hasil Praktikum</b></summary>
+<br>
+<blockquote>
+
+![Hasil Praktikum](img/10.1.1.png)
+![Hasil Praktikum](img/10.1.2.png)
+
+</blockquote>
+</details>
+
+<br>
+
+<details>
+<summary><b>Analisis & Diskusi</b></summary>
+<br>
+<blockquote>
+
+**1. Mengapa sorting penting pada admin panel?**
+<br>
+Jawab : 
+Sorting sangat penting dalam panel admin untuk meningkatkan efisiensi navigasi dan akurasi manajemen data yang berjumlah besar. Tanpa fitur pengurutan, admin akan kesulitan menemukan entitas spesifik seperti transaksi terbaru, stok barang yang hampir habis, atau pengguna paling aktif di antara ribuan baris data lainnya. Kemampuan untuk mengatur urutan data secara dinamis memungkinkan admin melakukan analisis cepat dan pengambilan keputusan yang lebih tepat tanpa harus melakukan pencarian manual yang membuang waktu.
+
+**2.  Apa perbedaan sortable biasa dengan defaultSort()?**
+<br>
+Jawab : 
+Perbedaan utama antara keduanya terletak pada kontrol pengguna dibandingkan dengan inisialisasi sistem. Atribut sortable biasanya merujuk pada fitur antarmuka yang memungkinkan pengguna akhir secara manual mengubah urutan kolom dengan mengeklik header tabel sesuai kebutuhan mereka saat itu. Sebaliknya, defaultSort() adalah instruksi di tingkat kode yang menentukan urutan data secara otomatis saat halaman pertama kali dimuat, memastikan bahwa admin langsung melihat data dalam susunan yang paling relevan (seperti data terbaru) sebelum melakukan interaksi apa pun.
+
+**3. Mengapa relasi tetap bisa di-sort?**
+<br>
+Jawab : 
+Relasi tetap bisa diurutkan karena sistem backend atau ORM melakukan operasi penggabungan tabel (join) atau menggunakan subquery untuk menarik data terkait ke dalam satu hasil kueri yang terintegrasi. Meskipun secara fisik data tersebut berada di tabel yang berbeda, perintah SQL ORDER BY dapat diarahkan ke kolom pada tabel relasi tersebut setelah hubungan antar tabel didefinisikan melalui kunci tamu (foreign key). Hal ini memungkinkan data utama tetap teratur berdasarkan informasi yang tersimpan di tabel pendukungnya.
+
+**4. Kapan kita menggunakan desc sebagai default?**
+<br>
+Jawab : 
+Penggunaan urutan menurun atau descending (DESC) sebagai standar biasanya diterapkan pada data yang bersifat kronologis atau berbasis prioritas di mana informasi terbaru atau tertinggi memiliki relevansi paling besar. Sebagai contoh, pada tabel log aktivitas, transaksi keuangan, atau pesan masuk, admin umumnya perlu melihat entitas yang baru saja terjadi di baris paling atas tanpa harus melakukan scrolling ke bawah. Selain itu, urutan DESC ideal digunakan untuk memantau peringkat atau nilai numerik terbesar agar data yang paling signifikan langsung terlihat oleh pengguna.
+
+</blockquote>
+</details>
+
+<br>
+
+---
+
+## JOBSHEET WEEK 11
+
+### Implementasi Search & Filter pada Table Filament
+<br>
+
+<details>
+<summary><b>Hasil Praktikum</b></summary>
+<br>
+<blockquote>
+
+![Hasil Praktikum](img/11.1.1.png)
+![Hasil Praktikum](img/11.1.2.png)
+
+
+</blockquote>
+</details>
+
+<br>
+
+<details>
+<summary><b>Analisis & Diskusi</b></summary>
+<br>
+<blockquote>
+
+**1. Mengapa search tidak cocok untuk filter tanggal?**
+<br>
+Jawab : 
+Fitur search pada dasarnya bekerja dengan membandingkan kecocokan teks atau string secara parsial (partial match) menggunakan logika LIKE pada database. Tanggal di dalam database biasanya disimpan dalam format standar (seperti YYYY-MM-DD), sehingga jika pengguna mencari dengan format berbeda (misalnya "28 Feb"), sistem search sering kali gagal menemukannya karena perbedaan penulisan karakter. Sementara itu, filter menggunakan komponen khusus seperti DatePicker yang memungkinkan pencarian dilakukan berdasarkan nilai objek tanggal yang pasti, bukan sekadar kecocokan teks.
+
+**2.  Apa fungsi relationship() pada SelectFilter?**
+<br>
+Jawab : 
+Method relationship() pada SelectFilter berfungsi untuk menghubungkan filter secara otomatis dengan data yang ada pada tabel relasi di database. Dengan menggunakan method ini, Filament akan secara otomatis mengambil daftar data dari tabel terkait (misalnya mengambil semua nama dari tabel categories) dan menampilkannya sebagai opsi pilihan dalam dropdown filter. Hal ini memudahkan pengembang karena tidak perlu menulis kueri manual untuk memunculkan daftar kategori yang tersedia bagi admin.
+
+**3. Mengapa kita perlu whereDate() pada query filter?**
+<br>
+Jawab : 
+Kita membutuhkan whereDate() karena kolom seperti created_at biasanya memiliki tipe data datetime yang menyimpan informasi hingga satuan jam, menit, dan detik. Jika kita menggunakan perbandingan biasa (=), sistem akan mencari data yang waktunya tepat hingga ke detiknya, sehingga data sering tidak muncul meskipun tanggalnya sama. Fungsi whereDate() memerintahkan database untuk hanya membandingkan bagian tanggalnya saja (Tahun-Bulan-Hari) dan mengabaikan bagian waktunya, sehingga pencarian tanggal menjadi akurat.
+
+**4. Apa perbedaan searchable() dan filters()?**
+<br>
+Jawab : 
+Perbedaan utamanya terletak pada cara kerja dan input yang digunakan pengguna untuk menemukan data. Method searchable() digunakan untuk mengaktifkan kolom pencarian teks yang bekerja secara real-time melalui satu kotak input global di atas tabel, biasanya untuk kolom seperti judul atau slug. Sedangkan filters() menyediakan menu khusus (biasanya dalam bentuk ikon corong) yang berisi berbagai komponen input seperti dropdown atau pemilih tanggal untuk menyaring data berdasarkan kondisi yang lebih spesifik dan terstruktur.
+
+</blockquote>
+</details>
+
+<br>
+
+---
+
+<p align="right">Tahun Akademik 2025/2026</p>
